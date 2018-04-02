@@ -59,6 +59,10 @@ Develop and support by [Lab409](http://lab409.ru) hardware team:
 
 2. Finish initial setup as described at [Get Started with LinkIt Smart 7688 Dev Board](https://docs.labs.mediatek.com/resource/linkit-smart-7688/en/get-started/get-started-with-the-linkit-smart-7688-development-board)
 
+## Preparation for participants
+
+1. Please register and remember your credentals at [http://freeboard.io](http://freeboard.io)
+
 ## Lab notes
 
 TBA
