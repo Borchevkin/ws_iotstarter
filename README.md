@@ -27,9 +27,9 @@ Develop and support by [Lab409](http://lab409.ru) hardware team:
 
 * ***/lab04/*** - final lab with the [dweet.io](http://dweet.io) where:
 
-    * ***/lab04/lab04_actuator.py*** - send button state to the [dweet.io](http://dweet.io)
+    * ***/lab04/lab04_actuator.py*** - get button state from the [dweet.io](http://dweet.io)
 
-    * ***/lab04/lab04_sensor.py*** - get button state from the [dweet.io](http://dweet.io) and control the actuator
+    * ***/lab04/lab04_sensor.py*** - send button state to the [dweet.io](http://dweet.io) and control the actuator
 
 * ***/materials/*** - useful material for printing for each student
 

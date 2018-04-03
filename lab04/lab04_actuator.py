@@ -3,26 +3,47 @@
 '''
 Lab 04 - actuator
 
-In this lab you will connect to MediaTek LinkIt Smart a button 
-and send button's data to the cloud backend - dweet.io.
+In this lab you will connect to MediaTek LinkIt Smart a simple actuators - led and buzzer 
+and change the state of the actuator depending on the data on the cloud backend - dweet.io.
 
 Button should be connected as following
 
 Actuator      -->      LinkIt Smart
 -----------------------------------
-VCC (Red)     -->      
-SIG (Yellow)  -->   
-GND (Black)   -->
+VCC (Red)     -->      3V3
+SIG (Yellow)  -->      P31
+GND (Black)   -->      GND
 
 Logic of work:
 1. Start script and show welcome prompt
 2. Go to supercycle
-3. Scan button
-4. If button is pressed then log to the console and send data to the cloud backend
+3. Scan data on the cloud backend
+4. If button "state" is "True" then log to the console and set actuator ON
 
 For exit from script please press Ctrl+C
 
 '''
 
-while(1):
-    
+# Import dependencies 
+import mraa
+import requests
+
+# Select and configure GPIO pin for SIG pin
+pinSIG = mraa.Gpio(14)
+pinSIG.dir(mraa.DIR_OUT)
+
+# Address variable
+yourDevice = 'linkit_button_test'
+
+# Welcome prompt
+print("The script starts now.")
+
+# Endless cycle
+while True:
+    checkState = requests.get('https://dweet.io/get/latest/dweet/for/' + yourDevice)
+    if ("True" in checkState.text):
+        pinSIG.write(1)
+        print("Actuator is ON")
+    if ("False" in checkState.text):
+        pinSIG.write(0)
+        print("Actuator is OFF")
