@@ -43,11 +43,14 @@ print("The script starts now.")
 
 # Endless cycle
 while True:
-    if (pinSIG.read() == 1 and stateButton == False):
-        stateButton = True
-        r = requests.get('https://dweet.io/dweet/for/' + yourDevice + '?state=True')
-        print("Button Pressed!")
-    if (pinSIG.read() == 0 and stateButton == True):
-        stateButton = False
-        r = requests.get('https://dweet.io/dweet/for/' + yourDevice + '?state=False')
-        print("Button Depressed!")
+    try:
+        if (pinSIG.read() == 1 and stateButton == False):
+            stateButton = True
+            r = requests.get('https://dweet.io/dweet/for/' + yourDevice + '?state=True')
+            print("Button Pressed!")
+        if (pinSIG.read() == 0 and stateButton == True):
+            stateButton = False
+            r = requests.get('https://dweet.io/dweet/for/' + yourDevice + '?state=False')
+            print("Button Depressed!")
+    except KeyboardInterrupt:
+        print("The script ends now.")

@@ -40,10 +40,13 @@ print("The script starts now.")
 
 # Endless cycle
 while True:
-    checkState = requests.get('https://dweet.io/get/latest/dweet/for/' + yourDevice)
-    if ("True" in checkState.text):
-        pinSIG.write(1)
-        print("Actuator is ON")
-    if ("False" in checkState.text):
-        pinSIG.write(0)
-        print("Actuator is OFF")
+    try:
+        checkState = requests.get('https://dweet.io/get/latest/dweet/for/' + yourDevice)
+        if ("True" in checkState.text):
+            pinSIG.write(1)
+            print("Actuator is ON")
+        if ("False" in checkState.text):
+            pinSIG.write(0)
+            print("Actuator is OFF")
+    except KeyboardInterrupt:
+        print("The script ends now.")
