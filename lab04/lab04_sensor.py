@@ -48,9 +48,12 @@ while True:
             stateButton = True
             r = requests.get('https://dweet.io/dweet/for/' + yourDevice + '?state=True')
             print("Button Pressed!")
-        if (pinSIG.read() == 0 and stateButton == True):
+
+        # FIX CODE
+        if (??? and stateButton == True):
             stateButton = False
             r = requests.get('https://dweet.io/dweet/for/' + yourDevice + '?state=False')
             print("Button Depressed!")
+
     except KeyboardInterrupt:
         print("The script ends now.")

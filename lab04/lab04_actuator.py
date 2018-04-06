@@ -43,10 +43,16 @@ while True:
     try:
         checkState = requests.get('https://dweet.io/get/latest/dweet/for/' + yourDevice)
         if ("True" in checkState.text):
-            pinSIG.write(1)
+            # Write 1 to your pinSIG GPIO
+            # WRITE YOUR CODE HERE
+
             print("Actuator is ON")
+            
         if ("False" in checkState.text):
-            pinSIG.write(0)
+            # Write 1 to your pinSIG GPIO
+            # WRITE YOUR CODE HERE
+
             print("Actuator is OFF")
+
     except KeyboardInterrupt:
         print("The script ends now.")
