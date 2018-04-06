@@ -113,3 +113,7 @@ ENV/
 
 
 # End of https://www.gitignore.io/api/visualstudiocode
+
+# Backup files
+~*
+*.bak
