@@ -40,11 +40,13 @@ print("The script starts now.")
 # Endless cycle
 while True:
     try:
+        # This code return to console when button is pressed
         if (pinSIG.read() == 1 and stateButton == False):
             stateButton = True
             print("Button Pressed!")
-        if (pinSIG.read() == 0 and stateButton == True):
-            stateButton = False
-            print("Button Depressed!")
+        
+        # Write logic which be indicate of released button
+        # WRITE YOUR CODE HERE
+
     except KeyboardInterrupt:
         print("The script ends now.")

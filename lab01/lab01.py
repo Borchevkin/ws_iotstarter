@@ -37,13 +37,14 @@ print("The script starts now.")
 # Endless cycle
 while True:
     try:
-        # LED/Buzzer ON
-        pinSIG.write(1)
-        # Wait for 1 second
-        time.sleep(1)
-        # LED/Buzzer OFF
-        pinSIG.write(0)
-        # Wait for 1 second again
-        time.sleep(1)
+        # LED/Buzzer ON. For it please use write(LEVEL) method of pinSIG
+        # WRITE YOUR CODE HERE
+        
+        # Wait for 1 second. Please use time.sleep method
+        # WRITE YOUR CODE HERE
+
+        # And now please think what you need to write for blinking/buzzing
+        # WRITE YOUR CODE HERE
+
     except KeyboardInterrupt:
         print("The script ends now.")

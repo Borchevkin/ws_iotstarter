@@ -37,7 +37,9 @@ pinSIG.dir(mraa.DIR_IN)
 stateButton = False
 
 # Address variable
-yourDevice = 'linkit_button_test'
+# Give name to your device
+# FIX DEVICE NAME
+yourDevice = 'YOUR_DEVICE_AMAZING_NAME'
 
 # Welcome prompt
 print("The script starts now.")
@@ -52,6 +54,9 @@ while True:
         if (pinSIG.read() == 0 and stateButton == True):
             stateButton = False
             r = requests.get('https://dweet.io/dweet/for/' + yourDevice + '?state=False')
-            print("Button Depressed!")
+            # Add output to the console
+            # WRITE YOUR CODE HERE
+
+
     except KeyboardInterrupt:
         print("The script ends now.")
