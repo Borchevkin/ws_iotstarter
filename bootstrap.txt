@@ -1,0 +1,16 @@
+# --------- Connect over SSH ------------
+ssh root@10.0.0.4
+# Next enter your password - wsXX (XX on Mediatek)
+
+# --------- Clone repo -----------------
+git clone git://github.com/Lab409/ws_iotstarter.git
+# Switch branch
+git checkout origin/workshop
+git checkout workshop
+
+# -------- Work with filesystem -------
+ls
+cd ws_iotstarter
+cd lab01
+vim lab01.py
+python lab01.py 
